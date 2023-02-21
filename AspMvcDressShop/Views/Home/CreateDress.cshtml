@@ -1,0 +1,40 @@
+﻿@model AspMvcDressShop.Models.ViewImage
+
+<<h2>Добавление одежды</h2>
+<form asp-action="CreateDress" asp-controller="home" method="post" enctype="multipart/form-data">
+    <p>
+        <input name="Avatar" type="file" class="form-control" />
+    </p>
+    <p>
+        <label asp-for="Dress.Name">Название</label><br />
+        <input type="text" asp-for="Dress.Name"/>
+    </p>
+    <p>
+        <label asp-for="Dress.Type">Тип</label><br />
+        <input type="text" asp-for="Dress.Type"/>
+    </p>
+    <p>
+        <label asp-for="Dress.Size">Размер</label><br />
+        <input type="text" asp-for="Dress.Size"/>1
+    </p>
+    <p>
+        <label asp-for="Dress.Model">Модель</label><br />
+        <input type="text" asp-for="Dress.Model"/>
+    </p>
+    <p>
+        <label asp-for="Dress.Colour">Цвет</label><br />
+        <input type="text" asp-for="Dress.Colour"/>
+    </p>
+    <p>
+        <label asp-for="Dress.Material">Материал</label><br />
+        <input type="text" asp-for="Dress.Material"/>
+    </p>
+    <p>
+        <label asp-for="Dress.Cost">Цена</label><br />
+        <input type="text" asp-for="Dress.Cost"/>
+    </p>
+    <p>
+        <input type="submit" value="Отправить" />
+    </p>
+</form>
+

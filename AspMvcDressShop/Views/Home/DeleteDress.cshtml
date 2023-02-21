@@ -1,0 +1,12 @@
+﻿@model AspMvcDressShop.Models.Dress
+
+<<h2>Удаление одежды</h2>
+<form asp-action="DeleteDress" asp-controller="home">
+    <p>
+        <label asp-for="Name">Название</label><br />
+        <input type="text" asp-for="Name"/>
+    </p>
+    <p>
+        <input type="submit" value="Отправить" />
+    </p>
+</form>

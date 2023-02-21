@@ -1,0 +1,65 @@
+﻿@*@model IEnumerable<AspMvcDressShop.Models.ViewModel>*@
+@model IEnumerable<AspMvcDressShop.Models.Dress>
+
+<h2>Магазин</h2>
+<p><a asp-action="Create">Добавить одежду</a></p>
+<p><a asp-action="Delete">Удалить одежду</a></p>
+
+<div style="text-align: center;">
+ <form style="display: inline-block; asp-action="SelectCost" asp-controller="home">
+    <p>
+        <label name="cost">Поиск по цене от</label><br />
+        <input type="text" name="cost"/>
+    </p>
+    <p>
+        <input type="submit" value="Отправить" />
+    </p>
+ </form>
+ <form style="display: inline-block;" asp-action="SelectCostDo" asp-controller="home" >
+    <p>
+        <label name="cost">Поиск по цене до</label><br />
+        <input type="text" name="cost"/>
+    </p>
+    <p>
+        <input type="submit" value="Отправить" />
+    </p>
+ </form>
+ <form style="display: inline-block;" asp-action="SelectSize" asp-controller="home" >
+    <p>
+        <label name="cost">Поиск по размеру</label><br />
+        <input type="text" name="cost"/>
+    </p>
+    <p>
+        <input type="submit" value="Отправить" />
+    </p>
+ </form>
+ <form style="display: inline-block;" asp-action="SelectColour" asp-controller="home" >
+    <p>
+        <label name="cost">Поиск по цвету</label><br />
+        <input type="text" name="cost"/>
+    </p>
+    <p>
+        <input type="submit" value="Отправить" />
+    </p>
+ </form>
+</div>
+<table class="table">
+
+     <tr><th>Картинка</th><th>Название</th><th>Модель</th><th>Тип</th><th>Размер</th><th>Цвет</th><th>Модель</th><th>Цена</th></tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            @if (item.Img != null)
+            {
+            <td><img style='width:80px; height:60px;' src="data:image/jpeg;base64,@(Convert.ToBase64String(item.Img))" /></td>
+            }
+            <td>@item.Name</td>
+            <td>@item.Model</td>
+            <td>@item.Type</td>
+            <td>@item.Size</td> 
+            <td>@item.Colour</td>
+            <td>@item.Model</td>
+            <td>@item.Cost</td>
+        </tr>
+    }
+</table>
